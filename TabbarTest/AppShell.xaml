@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TabbarTest.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TabbarTest"
+    xmlns:views="clr-namespace:TabbarTest.View"
+    xmlns:viewmodel="clr-namespace:TabbarTest.ViewModel"
+    xmlns:aux="clr-namespace:TabbarTest.Auxiliaries"
+    x:DataType="aux:Tracker" >
+
+    <TabBar FlexLayout.AlignSelf="Auto" >
+        <ShellContent Title="Page 1" Icon="map_icon_light" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+        <Tab Title="Page 2" Icon="calendar_icon_light" IsVisible="{Binding IsLoggedIn}" >
+            <ShellContent Title="Page 2-A" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedIn}" Route="MainPage"/>
+            <ShellContent Title="Page 2-B" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedIn}" Route="MainPage"/>
+        </Tab>
+        <ShellContent Title="LogIn/Out" Icon="user_icon_light" ContentTemplate="{DataTemplate views:Page3}" IsVisible="{Binding IsLoggedIn}" Route="Page3"/>
+        <ShellContent Title="LogIn/Out" Icon="user_icon_light" ContentTemplate="{DataTemplate views:Page4}" IsVisible="{Binding IsLoggedOut}" Route="Page4"/>
+        <ShellContent Title="Page 5" Icon="user_icon_light" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedOut}" Route="MainPage"/>
+        
+        <!-- Adding additional tabs above 5 will yield the error when the tabbar is changed through "IsLoggedIn" -->
+        <ShellContent Title="Page 6" Icon="user_icon_light" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedOut}" Route="MainPage"/>
+        <ShellContent Title="Page 7" Icon="calendar_icon_light" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedIn}" Route="MainPage"/>
+        <ShellContent Title="Page 8" Icon="user_icon_light" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedIn}" Route="MainPage" />
+        <ShellContent Title="Page 9" Icon="calendar_icon_light" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedIn}" Route="MainPage"/>
+        <ShellContent Title="Page 10" Icon="calendar_icon_light" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedIn}" Route="MainPage"/>
+        <ShellContent Title="Page 11" Icon="user_icon_light" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedIn}" Route="MainPage"/>
+        <ShellContent Title="Page 12" Icon="calendar_icon_light" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        <ShellContent Title="Page 13" Icon="calendar_icon_light" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        <ShellContent Title="Page 14" Icon="calendar_icon_light" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        <ShellContent Title="Page 15" Icon="calendar_icon_light" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedIn}" Route="MainPage"/>
+    </TabBar>
+</Shell>
