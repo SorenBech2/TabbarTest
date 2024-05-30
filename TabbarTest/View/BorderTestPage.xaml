@@ -47,5 +47,7 @@
                 </HorizontalStackLayout>
             </VerticalStackLayout>
         </Border>
+
+        <Label Padding="15,15,5,0" Text="The issue is two-fold.&#10;&#10;The top border does not expand to include the expansion of the Label into two or more lines.&#10;&#10;In addition, the radio buttons are not updated and becomes 'blocked' when both have been pressed." />
     </VerticalStackLayout>
 </ContentPage>
