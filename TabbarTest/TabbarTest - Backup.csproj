@@ -65,16 +65,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-
-		<!-- In order to provoke error comment below two lines -->
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.40" />
-		
-		<!-- In order to provoke error un-comment below two lines -->
-		<!--<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.60-ci.net8.24277.1" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.60-ci.net8.24277.1" />-->
-		
-		
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 	</ItemGroup>
 

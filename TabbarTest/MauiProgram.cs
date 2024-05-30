@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using TabbarTest.Auxiliaries;
 using TabbarTest.View;
+using TabbarTest.ViewModel;
 
 namespace TabbarTest
 {
@@ -20,13 +21,20 @@ namespace TabbarTest
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-            
-            builder.Services.AddSingleton<AppShell>();
-            builder.Services.AddSingleton<Tracker>();
+            // Adding services
+            builder.Services.AddSingleton<AppShell>()
+                            .AddSingleton<Tracker>();
 
-            builder.Services.AddTransient<MainPage>();
-            builder.Services.AddTransient<Page3>();
-            builder.Services.AddTransient<Page4>();
+            // Adding pages
+            builder.Services.AddTransient<MainPage>()
+                            .AddTransient<Page3>()
+                            .AddTransient<Page4>()
+                            .AddTransient<BorderTestPage>();
+            
+            // Adding view models
+            builder.Services.AddTransient<BorderTestPageViewModel>();
+
+
             return builder.Build();
         }
     }

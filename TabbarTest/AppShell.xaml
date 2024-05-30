@@ -10,14 +10,14 @@
     x:DataType="aux:Tracker" >
 
     <TabBar FlexLayout.AlignSelf="Auto" >
-        <ShellContent Title="Page 1" Icon="map_icon_light" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+        <ShellContent Title="Border Test" Icon="map_icon_light" ContentTemplate="{DataTemplate views:BorderTestPage}" Route="BorderTestPage" />
         <Tab Title="Page 2" Icon="calendar_icon_light" IsVisible="{Binding IsLoggedIn}" >
             <ShellContent Title="Page 2-A" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedIn}" Route="MainPage"/>
             <ShellContent Title="Page 2-B" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedIn}" Route="MainPage"/>
         </Tab>
         <ShellContent Title="LogIn/Out" Icon="user_icon_light" ContentTemplate="{DataTemplate views:Page3}" IsVisible="{Binding IsLoggedIn}" Route="Page3"/>
         <ShellContent Title="LogIn/Out" Icon="user_icon_light" ContentTemplate="{DataTemplate views:Page4}" IsVisible="{Binding IsLoggedOut}" Route="Page4"/>
-        <ShellContent Title="Page 5" Icon="user_icon_light" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedOut}" Route="MainPage"/>
+        <ShellContent Title="Page 5" Icon="user_icon_light" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedOut}" Route="Page5"/>
         
         <!-- Adding additional tabs above 5 will yield the error when the tabbar is changed through "IsLoggedIn" -->
         <ShellContent Title="Page 6" Icon="user_icon_light" ContentTemplate="{DataTemplate local:MainPage}" IsVisible="{Binding IsLoggedOut}" Route="MainPage"/>

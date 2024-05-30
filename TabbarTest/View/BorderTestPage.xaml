@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewmodel="clr-namespace:TabbarTest.ViewModel"
+             x:DataType="viewmodel:BorderTestPageViewModel"
+             x:Class="TabbarTest.View.BorderTestPage"
+             Title="Border Test Page" >
+
+    <VerticalStackLayout Spacing="5">
+        <Border MinimumHeightRequest="90" WidthRequest="355" Padding="10,0,10,10" Margin="0,20,0,0" HorizontalOptions="Center">
+            <Border.Shadow>
+                <Shadow Brush="{AppThemeBinding Light=LightGray, Dark=Gray}" Offset="5,5" Opacity="0.5"/>
+            </Border.Shadow>
+            <Grid RowDefinitions="45,14,*" ColumnDefinitions="30,175,150">
+                
+                <ActivityIndicator Grid.RowSpan="2" Grid.ColumnSpan="3" IsRunning="{Binding IsBusy}" />
+                
+                <Image Grid.Row="0"  
+                       Source="price_icon_light" HeightRequest="20" Opacity="0.5" HorizontalOptions="Start" 
+                       VerticalOptions="Center" Margin="0,5,0,0"/>
+                <Label Grid.Row="0" Grid.Column="1"
+                       Text="Fee" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Grid.Row="0" Grid.Column="2"
+                       Text="250 EUR" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" MaximumWidthRequest="145" LineBreakMode="WordWrap"/>
+
+                <Image Grid.Row="1" Grid.RowSpan="2"  
+                       Source="fee_includes_icon_light" HeightRequest="20" Opacity="0.5" HorizontalOptions="Start" VerticalOptions="Center" Margin="0,5,0,0"/>
+                <Label Grid.Row="1" Grid.Column="1"
+                       Text="Fee Includes" FontAttributes="Bold" FontSize="Micro"/>
+
+                <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                       Text="{Binding StringInQuestion}" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start" Padding="0,0,15,0"/>
+            </Grid>
+        </Border>
+
+        <Border HeightRequest="75" WidthRequest="355" Padding="15,10,0,0" >
+            <Border.Shadow>
+                <Shadow Brush="{AppThemeBinding Light=LightGray, Dark=Gray}" Offset="5,5" Opacity="0.5"/>
+            </Border.Shadow>
+            <VerticalStackLayout>
+                <Label Text="Choose Cancellation Insurance" FontAttributes="Bold" />
+                <HorizontalStackLayout>
+                    <Label Text="Cancellation Fee" FontAttributes="Bold" VerticalTextAlignment="Center" Margin="0,0,15,0" />
+                    <RadioButton Content="Yes" GroupName="Insurance" CheckedChanged="RadioButton_CheckedChanged" />
+                    <RadioButton Content="No" GroupName="Insurance" CheckedChanged="RadioButton_CheckedChanged" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>
